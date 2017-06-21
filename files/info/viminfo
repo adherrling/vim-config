@@ -8,6 +8,8 @@
 # hlsearch on (H) or off (h):
 ~H
 # Command Line History (newest to oldest):
+:wq!
+:wq
 :q
 
 # Search String History (newest to oldest):
@@ -19,23 +21,89 @@
 # Input Line History (newest to oldest):
 
 # Registers:
+""1	LINE	0
+	    parseStatsJSON()
+"2	LINE	0
+	    initializeTable()
+"3	LINE	0
+	def buildPvETables(path, databasePath):
+"4	LINE	0
+	databasePath=''
+"5	LINE	0
+	path=''
+"6	LINE	0
+	    databasePath = inputDatabasePath
 
 # File marks:
-'0  56  0  ~/.vim/vimrc
-'1  1  0  ~/Documents/destiny-gotg/Leaderboard/BuildTables/buildBungieTable.py
-'2  57  0  ~/.vim/vimrc
+'0  52  12  ~/.vim/vimrc
+'1  57  0  ~/Documents/destiny-gotg/Leaderboard/BuildTables/buildPvETables.py
+'2  36  0  ~/Documents/destiny-gotg/Leaderboard/BuildTables/buildBungieTable.py
+'3  56  0  ~/.vim/vimrc
+'4  1  0  ~/Documents/destiny-gotg/Leaderboard/BuildTables/buildBungieTable.py
+'5  57  0  ~/.vim/vimrc
 
 # Jumplist (newest first):
--'  56  0  ~/.vim/vimrc
+-'  52  12  ~/.vim/vimrc
 -'  1  0  ~/.vim/vimrc
+-'  57  0  ~/Documents/destiny-gotg/Leaderboard/BuildTables/buildPvETables.py
+-'  1  0  ~/Documents/destiny-gotg/Leaderboard/BuildTables/buildPvETables.py
+-'  36  0  ~/Documents/destiny-gotg/Leaderboard/BuildTables/buildBungieTable.py
 -'  1  0  ~/Documents/destiny-gotg/Leaderboard/BuildTables/buildBungieTable.py
+-'  56  0  ~/.vim/vimrc
 -'  57  0  ~/.vim/vimrc
+-'  36  0  ~/Documents/destiny-gotg/Leaderboard/BuildTables/buildBungieTable.py
+-'  1  0  ~/Documents/destiny-gotg/Leaderboard/BuildTables/buildBungieTable.py
+-'  57  0  ~/Documents/destiny-gotg/Leaderboard/BuildTables/buildPvETables.py
+-'  1  0  ~/Documents/destiny-gotg/Leaderboard/BuildTables/buildPvETables.py
+-'  36  0  ~/Documents/destiny-gotg/Leaderboard/BuildTables/buildBungieTable.py
+-'  1  0  ~/Documents/destiny-gotg/Leaderboard/BuildTables/buildBungieTable.py
+-'  36  0  ~/Documents/destiny-gotg/Leaderboard/BuildTables/buildBungieTable.py
 -'  1  0  ~/Documents/destiny-gotg/Leaderboard/BuildTables/buildBungieTable.py
 
 # History of marks within files (newest to oldest):
 
 > ~/.vim/vimrc
-	"	56	0
+	"	52	12
+	^	52	13
+	.	52	13
+	+	52	13
+
+> ~/Documents/destiny-gotg/Leaderboard/BuildTables/buildPvETables.py
+	"	57	0
+	^	52	37
+	.	61	36
+	+	10	31
+	+	12	34
+	+	23	22
+	+	24	34
+	+	26	25
+	+	47	43
+	+	48	34
+	+	56	31
+	+	56	22
+	+	9	14
+	+	10	20
+	+	23	19
+	+	47	30
+	+	56	20
+	+	56	19
+	+	56	38
+	+	56	0
+	+	56	78
+	+	56	29
+	+	56	84
+	+	56	35
+	+	58	0
+	+	56	38
+	+	56	0
+	+	9	38
+	+	10	4
+	+	55	19
+	+	56	0
+	+	60	4
+	+	59	35
+	+	58	21
+	+	61	36
 
 > ~/Documents/destiny-gotg/Leaderboard/BuildTables/buildBungieTable.py
-	"	1	0
+	"	36	0
