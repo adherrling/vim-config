@@ -1,0 +1,58 @@
+for i in range(100,999):
+    for j in range(1000,9999):
+        a = j/10%10
+        if a!=0:
+            res = i*j
+            if len(str(res))==6:
+                if res/100%10 == a:
+                    if res/100000%10 == a:
+                        first = res/1000 - i*(j/1000)
+                        if first/10 == a:
+                            secondTop = first*10+a
+                            secondBottom = i*((j/100)%10)
+                            second = secondTop-secondBottom
+                            if ((second*10 + ((res/100)%10))-(i*((j/10)%10)))/10==a:
+                                print i,j
+
+def doThings(i,j):
+    res = i*j
+    a = (j/10)%10
+    if len(str(res))!=6:
+        return False
+    if str(a) in str(i):
+        return False
+    if returnIndices(str(a),str(j)) != [2]:
+        return False
+    if returnIndices(str(a), str(res)) != [0,3]:
+        return False
+    firstMult = i*((j/1000)%10)
+    if returnIndices(str(a),str(firstMult))!=[]:
+        return False
+    firstDiff = (((res/1000)-firstMult)*10)+((res/100)%10)
+    if returnIndices(str(a),str(firstDiff))!=[0,2]:
+        return False
+    secondMult = i*((j/100)%10)
+    if returnIndices(str(a),str(secondMult))!=[]:
+        return False
+    secondDiff = ((firstDiff-secondMult)*10)+((res/10)%10)
+    if returnIndices(str(a),str(secondDiff))!=[]:
+        return False
+    thirdMult = i*((j/10)%10)
+    if returnIndices(str(a),str(thirdMult))!=[3]:
+        return False
+    thirdDiff = ((secondDiff-thirdMult)*10)+(res%10)
+    if returnIndices(str(a),str(thirdDiff))!=[0]:
+        return False
+    return True
+
+def returnIndices(char, string):
+    return [i for i in range(len(string)) if char == string[i]]
+
+def runTest():
+    for i in range(100,999):
+        for j in range(1000, 9999):
+            res = doThings(i,j)
+            if res:
+                return i,j
+(i,j) = runTest()
+print i,j
