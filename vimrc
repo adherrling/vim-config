@@ -3,6 +3,9 @@
 set nocompatible
 
 filetype plugin indent on  " Load plugins according to detected filetype.
+runtime macros/matchit.vim
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+
 syntax on                  " Enable syntax highlighting.
 
 set autoindent             " Indent according to previous line.
@@ -71,5 +74,17 @@ set updatecount =100
 set undofile
 set undodir     =$HOME/.vim/files/undo/
 set viminfo     ='100,n$HOME/.vim/files/info/viminfo
+
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+noremap <Leader>n nzz
+noremap <Leader>N Nzz
+
+set number
+
 
 nmap =j :%!python -m json.tool
