@@ -36,7 +36,13 @@ set cursorline             " Find the current line quickly.
 set wrapscan               " Searches wrap around end-of-file.
 set report      =0         " Always report changed lines.
 set synmaxcol   =200       " Only highlight the first 200 columns.
+
+" Vim colorscheme options
+set term=screen-256color
+set t_ut=
 set background=dark
+colorscheme monokai
+" colorscheme solarized
 
 set list                   " Show non-printable characters.
 if has('multi_byte') && &encoding ==# 'utf-8'
@@ -89,13 +95,3 @@ noremap <Leader>N Nzz
 
 " Adds the =j command to format a json file
 nmap =j :%!python -m json.tool
-
-" The following are recommended by the plugin syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
