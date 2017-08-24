@@ -5,6 +5,7 @@ set nocompatible
 filetype plugin indent on  " Load plugins according to detected filetype.
 runtime macros/matchit.vim
 runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
 
 syntax on                  " Enable syntax highlighting.
 
@@ -37,19 +38,6 @@ set report      =0         " Always report changed lines.
 set synmaxcol   =200       " Only highlight the first 200 columns.
 set background=dark
 
-set nrformats=             " Changes leading zeroes to be interpreted as decimal
-set history=200            " Sets history size to be 200
-
-" Allows filtered search through command history with <C-p> and <C-n>
-cnoremap <C-p> <Up>
-cnoremap <C-n> <Down>
-
-" Changes :bnext, etc. to easier key commands
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
-nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> ]B :blast<CR>
-
 set list                   " Show non-printable characters.
 if has('multi_byte') && &encoding ==# 'utf-8'
   let &listchars = 'tab: ,extends:,precedes:,nbsp:'
@@ -75,6 +63,21 @@ set undofile
 set undodir     =$HOME/.vim/files/undo/
 set viminfo     ='100,n$HOME/.vim/files/info/viminfo
 
+" The following are all from the book Practical Vim.
+set nrformats=             " Changes leading zeroes to be interpreted as decimal
+set history=200            " Sets history size to be 200
+set number
+
+" Allows filtered search through command history with <C-p> and <C-n>
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+
+" Changes :bnext, etc. to easier key commands
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
+
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -84,7 +87,15 @@ noremap <Right> <Nop>
 noremap <Leader>n nzz
 noremap <Leader>N Nzz
 
-set number
-
-
+" Adds the =j command to format a json file
 nmap =j :%!python -m json.tool
+
+" The following are recommended by the plugin syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
